@@ -1,0 +1,27 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block main-content %}
+<div class="container mt-5 mb-5">
+<div class="row">
+{% for ele in list_blog  %}
+<div class="col-md-4">
+<div class="card mt-5">
+    <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+      <img src="{{ele.image.url}}" class="img-fluid"/>
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+      </a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ele.titre}}</h5>
+      <p class="card-text">{{ele.description|truncatechars:80|safe}}</p>
+      <div class="mb-5 ">{{ele.date}}</div>
+      <a href="{% url 'detail' ele.titre %}" class="btn btn-primary" data-mdb-ripple-init>voir plus</a>
+     
+    </div>
+  </div>
+</div>
+  {% endfor %}
+</div>
+</div>
+{% endblock main-content %}

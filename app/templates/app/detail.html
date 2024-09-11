@@ -1,0 +1,20 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block main-content %}
+
+<div class="container mt-5">
+<div class="card mb-3">
+    <img src="{{blogdetail.image.url}}" class="card-img-top" alt="Wild Landscape"/>
+    <div class="card-body">
+      <h5 class="card-title">{{blogdetail.titre}}</h5>
+      <p class="card-text">
+        {{blogdetail.description}}
+      </p>
+      <p class="card-text">
+        <small class="text-muted">{{blogdetail.date}}</small>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}
